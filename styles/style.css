@@ -1,0 +1,9 @@
+.mobile-card {
+    width: 30%;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.mobile-card-template {
+    display: none;
+}
