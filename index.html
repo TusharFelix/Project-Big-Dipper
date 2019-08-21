@@ -9,7 +9,47 @@
   <header class="header">
     <div class="container">
       <span class="header-title">Big Dipper</span>
+      <button id="myBtn" class="filter-button">Filter</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <section class="filter-section">
+            <div class="filter-options">
+                <button class="filter-option-button link" onclick="openTab(event, 'price')">
+                  Price
+                </button>
+                <button class="filter-option-button link" onclick="openTab(event, 'ram')">
+                  RAM
+                </button>
+                <button class="filter-option-button link" onclick="openTab(event, 'battery')">
+                  Battery
+                </button>
+              </div>
+            <div class="Container2">
+                <div id="price" class="content">
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹1000-10000</span></div>
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹10000-20000</span></div>
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹20000-30000</span></div>
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹30000-40000</span></div>
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹40000-50000</span></div>
+                    <div class="check-box-container"><input type="checkbox" class="mycheck"> <span class="mycheck">₹above 50000</span></div>
+                </div>
+              
+                <div id="ram" class="content">Hire</div>
+              
+                <div id="battery" class="content">Contact</div>
+
+            </div>
+          </section>
+        </div>
+
+      </div>
     </div>
+
   </header>
   <main>
     <div class="container">
@@ -33,6 +73,7 @@
     </div>
   </main>
   <script src="./js/script.js"></script>
+  <script src="./features/filter/filter.js"></script>
 </body>
 
 </html>
