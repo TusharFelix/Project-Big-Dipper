@@ -39,3 +39,30 @@ body{
 .mobile-card-template {
     display: none;
 }
+.btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.button {
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: black;
+}
+
+.view:hover{
+    border-color: grey;
+    background-color: grey;
+    color: black;
+}
+
+.compare:hover{
+    border-color: grey;
+    background-color: grey;
+    color: black;
+}
