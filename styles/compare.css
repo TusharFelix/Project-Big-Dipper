@@ -1,0 +1,14 @@
+.compare-container {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgb(135, 212, 10);
+    bottom: 0px;
+    width: 80%;
+    height: 50px;
+    margin:  auto;
+    box-sizing: border-box;
+}
+
+.compare-mobile-1 {}

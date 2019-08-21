@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/compare.css" />
+    <title>Big Dipper</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <span class="header-title">Big Dipper</span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="templates" style="display: none">
+                <div class="brand-card brand-template">
+                    <h2 class="brand-title">Brand title</h2>
+                    <div class="brand-models">
+                        <!-- contains all the mobiles of a particular brand -->
+                    </div>
+                </div>
+                <div class="mobile-card mobile-card-template">
+                    <h3 class="mobile-name">test name</h3>
+                    <div>
+                        <h6>RAM</h6>
+                        <div class="mobile-ram">test ram</div>
+                    </div>
+                    <div class="mobile-price">test price</div>
+
+                    <div>
+                        <button onclick=Compare(this.parentElement.parentElement.childNodes[1].innerText);>Compare</button>
+                    </div>
+                </div>
+            </div>
+            <div class="compare-container">
+                <div class="comapre-mobile-1">
+                    <img src="" alt="">
+                </div>
+                <div class="compare-mobile-2">
+                    <img src="" alt="">
+
+                </div>
+                <div class="compare-now-button">
+                    <button>compareNow</button>
+                </div>
+
+            </div>
+            <section class="brands-section"></section>
+
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+    <script src="./features/compare/compare.js"></script>
+</body>
+
+</html>

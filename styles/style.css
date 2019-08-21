@@ -1,41 +1,77 @@
-body{
+body {
     margin: 0;
     font-family: sans-serif;
     background-color: #ffffff;
 }
-*{
+
+* {
     box-sizing: border-box;
 }
-.header{
-    background-color: #66459b;       
+
+.header {
+    background-color: #66459b;
     padding: 1rem 0rem;
 }
-.header-title{
-    color: #ffffff; 
+
+.header-title {
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 1.2px;
 }
-.container{
+
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-.brand-card:nth-child(even) .mobile-card{
+
+.brand-card:nth-child(even) .mobile-card {
     background-color: #f8f8f8;
 }
-.brand-models{
+
+.brand-models {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -1rem 0rem 0;    
+    margin: 0 -1rem 0rem 0;
 }
+
 .mobile-card {
     width: calc(33.33% - 1rem);
-    margin: 0 1rem 1rem 0;    
+    margin: 0 1rem 1rem 0;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
     padding: 1.5rem;
 }
 
 .mobile-card-template {
     display: none;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: black;
+}
+
+.view:hover {
+    border-color: grey;
+    background-color: grey;
+    color: black;
+}
+
+.compare:hover {
+    border-color: grey;
+    background-color: grey;
+    color: black;
 }
