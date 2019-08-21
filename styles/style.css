@@ -74,32 +74,48 @@ body{
 {
     display: flex;
     justify-content: space-around;
+    padding: 10px;
+
 }
 .model-view-top-img
 {
     flex-basis: 40%;
-    background-color: red;
-    height: 300px;
+    text-align: center;
+    /* background-color: red; */
+    /* height: 300px; */
 }
 .model-view-desc
 {
     flex-basis: 60%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .model-view-bottom
 {
-    height: 100px;
-    background-color: green;
+    /* height: 100px; */
+    padding: 10px;
+    /* background-color: green; */
 }
 .modal-view-list
 {
     margin: 0px;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+.modal-view-list-desc li{
+    margin-top: 20px;
+}
+.modal-view-list-spec li{
+    margin-top: 10px;
+    list-style-type: none;
+    font-size: 25px;
+    font-weight: bold;
 }
 .modal {
     display: none; 
     position: fixed; 
     z-index: 1;
-    padding-top: 100px; 
+    padding: 50px; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -117,10 +133,10 @@ body{
   }
   .close {
     color: #aaaaaa;
-    /* float: right; */
+    float: right;
     font-size: 28px;
     font-weight: bold;
-   
+    cursor: pointer;
   }
   .close-div
   {

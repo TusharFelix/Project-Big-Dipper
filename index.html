@@ -28,25 +28,25 @@
           </div>
           <div class="mobile-price">test price</div>
           <div class="btn-div">
-              <button class="button view">VIEW</button>
-              <button class="button compare">COMPARE</button>
+              <button id="view-btn" class="button view"  >VIEW</button>
+              <!-- <button class="button compare">COMPARE</button> -->
           </div>
         </div>
       </div>
 
 
-      <div  class="modal-view-section modal">
+      <div id="myModal" class="modal-view-section modal">
           
           <div class="model-view-template modal-content">
               <div class="close-div">
-                  <span class="close">&times;</span>
+                  <button class="close">&times;</button>
               </div>
               <div class="model-view-top">
                   <div class="model-view-top-img">
                       <img id="mobile-img">
                   </div>
                   <div class="model-view-desc">
-                       <ul class="modal-view-list">
+                       <ul class="modal-view-list modal-view-list-desc model-view-data">
                            <li id="mobile-model"></li>
                            <li id="mobile-Ram"></li>
                            <li id="mobile-Rom"></li>
@@ -60,12 +60,11 @@
                   </div>
               </div>
               <div class="model-view-bottom">
-                  <ul class="modal-view-list">
-                      <li id="mobile-price"></li>
+                  <ul class="modal-view-list-spec model-view-list model-view-spec">
+                      <li id="mobile-price" ></li>
                       <li id="mobile-Rating"></li>
                       <li id="mobile-ModelNo"></li>
                       <li id="mobile-color"></li>
-                     
                   </ul>
               </div>
           </div>
