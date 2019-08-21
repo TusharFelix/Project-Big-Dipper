@@ -1,39 +1,28 @@
-window.onload = event => {
-    
     var mob_img = document.getElementById("mobile-img");
     var mobile_desc = document.getElementsByClassName("model-view-data")[0];
     var mobile_spec = document.getElementsByClassName("model-view-spec")[0];
-
     let cardElements = document.getElementsByClassName("mobile-card");
-    console.log(Array.from(cardElements).length);
-    for (let itr = 0; itr < Array.from(cardElements).length; itr++) {
+    var arr_len = Array.from(cardElements).length;
+    for (let itr = 0; itr < arr_len; itr++) {
         let btnEle = cardElements[itr];
-        sourceElement = btnEle.querySelector(" #view-btn");
-        sourceElement.addEventListener("click", bindClick(itr,btnEle));
+        sourceElement = btnEle.querySelector(".view-btn");
+        sourceElement.addEventListener("click", bindClick(btnEle));
     }
-    function bindClick(i,btnEle) {
-        return function() {
-            //function call
-            //display the model
+    function bindClick(btnEle) {
+        return function() { 
             viewModel();
             var mobile_name = btnEle.getElementsByClassName("mobile-name")[0].innerText;
             var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
-            console.log(typeof mobile_ram);
             for(var brand in brands){
-                mobileObj(brands[brand],mobile_name,mobile_ram);
+            mobileObj(brands[brand],mobile_name,mobile_ram);
         }
     };
   }
-
     function viewModel(){     //display model
-        console.log("model")
         var modal = document.getElementById("myModal");
-        console.log(modal)
-        var btn = document.getElementById("view-btn");
-        console.log(btn)
-        var span = document.getElementsByClassName("close")[0];
+        var close_button = document.getElementById("close");
         modal.style.display = "block";
-        span.onclick = function() {
+        close_button.onclick = function() {
         modal.style.display = "none";
         }
         window.onclick = function(event) {
@@ -42,21 +31,16 @@ window.onload = event => {
         }
         }
     }
-
     function mobileObj(brandObj,mobileName,mobile_ram){
-        brandObj.forEach(element => {
-            //   console.log(element.model,element.ram);
-            element.ram = element.ram.trim();
-            
+        brandObj.forEach(function(element){
+            element.ram = element.ram.trim();   
             if((element.model==mobileName)&&(element.ram==mobile_ram)){
                 modelData(element);
             }  
         });
     }
-
     function modelData(mobileObject){
         mob_img.setAttribute("src", mobileObject.imageUrl);
-        console.log(mobile_desc);
         mobile_desc.querySelector("#mobile-model").innerText = mobileObject.model;
         mobile_desc.querySelector("#mobile-Ram").innerText = mobileObject.ram;
         mobile_desc.querySelector("#mobile-Rom").innerText = mobileObject.rom;
@@ -69,10 +53,10 @@ window.onload = event => {
 
         //specification
         mobile_spec.querySelector("#mobile-price").innerText = "PRICE : Rs."+ mobileObject.price;
-        mobile_spec.querySelector("#mobile-Rating").innerText = mobileObject.ratings;
-        mobile_spec.querySelector("#mobile-ModelNo").innerText = mobileObject.modelNumber;
-        mobile_spec.querySelector("#mobile-color").innerText = mobileObject.color;
+        mobile_spec.querySelector("#mobile-Rating").innerText = "RATINGS : "+mobileObject.ratings;
+        mobile_spec.querySelector("#mobile-ModelNo").innerText = "MODELNUMBER : "+mobileObject.modelNumber;
+        mobile_spec.querySelector("#mobile-color").innerText = "COLOR : "+mobileObject.color;
     }
 
-}
+
   

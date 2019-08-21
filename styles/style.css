@@ -81,25 +81,21 @@ body{
 {
     flex-basis: 40%;
     text-align: center;
-    /* background-color: red; */
-    /* height: 300px; */
 }
 .model-view-desc
 {
     flex-basis: 60%;
-    /* background-color: yellow; */
+    
 }
 .model-view-bottom
 {
-    /* height: 100px; */
     padding: 10px;
-    /* background-color: green; */
 }
 .modal-view-list
 {
     margin: 0px;
     font-size: 20px;
-    /* font-weight: bold; */
+    
 }
 
 .modal-view-list-desc li{
@@ -138,6 +134,7 @@ body{
     font-weight: bold;
     cursor: pointer;
   }
+  
   .close-div
   {
       width: 100%;
