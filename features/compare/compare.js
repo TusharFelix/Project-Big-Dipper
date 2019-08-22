@@ -11,10 +11,16 @@ if (count == 0) {
 }
 
 function Compare(compareBrand,compareElement,compareRam) {
+  
     count++;
     if (count <= 2) {
         compareContainer.style.display = "flex";
         var imageLocation = findImagePath(compareBrand,compareElement,compareRam);
+        if(mobileNameArray[mobileNameArray.length-count]['model']==compareElement && count == 2){
+            count--;
+            return window.alert("Select Different Mobile");
+            
+        }
         var temp = count - 1;
         mobileName[temp].innerText = compareElement;
         imageArray[temp].src = imageLocation;
@@ -29,10 +35,6 @@ function Compare(compareBrand,compareElement,compareRam) {
         window.alert("cannot compare more than two mobiles");
         count = 0;
     }
-}
-
-function mobileCompare(mobileOne, mobileTwo) {
-
 }
 
 function findImagePath(compareBrand,compareElement,compareRam) {
@@ -69,30 +71,29 @@ function compareMobileFeature(mobile1, mobile2) {
     var tableTemplateNode = tableTemplate.cloneNode(false);
     tableTemplateNode.classList.remove('table-template');
 
-    for (var aa in mobile1) {
-        if (aa == 'imageUrl') {
+    for (var brandKeys in mobile1) {
+        if (brandKeys == 'imageUrl') {
             var tableRowNode = tableRow.cloneNode(false);
-            var tableColumnNodeKey = tableColumn.cloneNode(false);
-            //      tableColumnNodeKey.innerText = "";
+            var tableColumnNodeKey = tableColumn.cloneNode(false)
             tableRowNode.appendChild(tableColumnNodeKey);
             var tableColumnNode = tableColumn.cloneNode(true);
-            tableColumnNode.innerHTML = "<img src=" + mobile1[aa] + " >";
+            tableColumnNode.innerHTML = "<img src=" + mobile1[brandKeys] + " >";
             tableRowNode.appendChild(tableColumnNode);
             var tableColumnNode1 = tableColumn.cloneNode(true);
-            tableColumnNode1.innerHTML = "<img src=" + mobile2[aa] + " >";
+            tableColumnNode1.innerHTML = "<img src=" + mobile2[brandKeys] + " >";
             tableRowNode.appendChild(tableColumnNode1);
             tableTemplateNode.appendChild(tableRowNode);
         }
         else {
             var tableRowNode = tableRow.cloneNode(false);
             var tableColumnNodeKey = tableColumn.cloneNode(false);
-            tableColumnNodeKey.innerText = aa;
+            tableColumnNodeKey.innerText = brandKeys;
             tableRowNode.appendChild(tableColumnNodeKey);
             var tableColumnNode = tableColumn.cloneNode(false);
-            tableColumnNode.innerText = mobile1[aa];
+            tableColumnNode.innerText = mobile1[brandKeys];
             tableRowNode.appendChild(tableColumnNode);
             var tableColumnNode1 = tableColumn.cloneNode(false);
-            tableColumnNode1.innerText = mobile2[aa];
+            tableColumnNode1.innerText = mobile2[brandKeys];
             tableRowNode.appendChild(tableColumnNode1);
             tableTemplateNode.appendChild(tableRowNode);
         }
