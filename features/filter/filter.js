@@ -1,33 +1,13 @@
 var inputElements = document.querySelectorAll("input.mycheck");
 // console.log(inputElements);
-for (let i = 0; i < Array.from(inputElements).length; i++) {
-  inputElements[i].addEventListener("click", e => generateconditions(e));
-}
 document.querySelector(".filter-submit").addEventListener("click", e => {
-  return filterMobiles();
+  return filterBrand();
 });
 
 var brand = Object.keys(brands);
 var length = Object.keys(brands).length;
 var ram = [];
 var j = 0;
-var filterConditions = [
-  {
-    filterType: "PRICE",
-    applicable: false,
-    selected: []
-  },
-  {
-    filterType: "RAM",
-    applicable: false,
-    selected: []
-  },
-  {
-    filterType: "BRAND",
-    applicable: false,
-    selected: []
-  }
-];
 var filteredArray = [];
 var selectedFilter = null;
 for (var i = 0; i < length; i++) {
@@ -36,11 +16,7 @@ for (var i = 0; i < length; i++) {
   });
 }
 ram.sort();
-// console.log(ram);
 var val = [...new Set(ram)];
-// console.log(val);
-// console.log(brand);
-
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -73,7 +49,7 @@ window.onclick = function(event) {
 function openTab(click, openTab) {
   var i, content, link;
   selectedFilter = openTab.toUpperCase();
-  // console.log(selectedFilter);
+  
   content = document.getElementsByClassName("content");
   for (i = 0; i < content.length; i++) {
     content[i].style.display = "none";
@@ -84,29 +60,6 @@ function openTab(click, openTab) {
   }
   document.getElementById(openTab).style.display = "block";
   click.currentTarget.className += " active";
-}
-function generateconditions(e) {
-  // var currentIndex = null;
-  // currentIndex = filterConditions.findIndex(function(ele) {
-  //   return ele.filterType === selectedFilter;
-  // });
-  // // console.log(selectedEle);
-  // if (e.target.checked) {
-  //   filterConditions[currentIndex].selected.push(selectedEle);
-  //   filterConditions[currentIndex].applicable = true;
-  //   console.log(filterConditions);
-  // } else {
-  //   var removeIndex = filterConditions[currentIndex].selected.findIndex(
-  //     function(ele) {
-  //       return ele === selectedEle;
-  //     }
-  //   );
-  //   filterConditions[currentIndex].selected.splice(removeIndex, 1);
-  //   if (!filterConditions[currentIndex].selected.length) {
-  //     filterConditions[currentIndex].applicable = false;
-  //   }
-  //   console.log(filterConditions);
-  // }
 }
 var myArray = val;
 var ramArray = [];
@@ -142,23 +95,17 @@ var brandfiltercontainertemplate = document.querySelector(
 );
 for (i = 0; i < brand.length; i++) {
   var brandfiltercontainer = brandfiltercontainertemplate.cloneNode(true);
-  // var brandfiltercheck = brandfilterchecktemplate.cloneNode(true);
-  // var brandFilter=brandFiltertemplate.cloneNode(true);
   brandfiltercontainer.classList.remove("brand-container-temp");
   var brandfiltercheck = brandfiltercontainer.querySelector("input");
   var brandFilter = brandfiltercontainer.querySelector("label");
   brandfiltercheck.classList.remove("brand-filter-check-temp");
   brandFilter.classList.remove("brand-filter-temp");
-  // console.log(brandFilter);
   brandfiltercheck.innerText = brand[i];
   brandfiltercheck.setAttribute("id", "brand-id-" + i);
   brandFilter.innerText = brand[i];
   brandFilter.setAttribute("for", "brand-id-" + i);
   brandWrapper.appendChild(brandfiltercontainer);
-  // brandContainer.appendChild(brandFilter);
 }
-
-// console.log(filteredRam);
 var ramFiltertemplate = document.querySelector(".ram-filter-temp");
 var ramContainer = document.querySelector("#ram-container");
 var ramWrapper = document.querySelector("#ram");
@@ -166,63 +113,18 @@ var ramfilterchecktemplate = document.querySelector(".ram-filter-check-temp");
 var ramfiltercontainertemplate = document.querySelector(".ram-container-temp");
 for (i = 0; i < filteredRam.length; i++) {
   var ramfiltercontainer = ramfiltercontainertemplate.cloneNode(true);
-  // var ramfiltercheck = ramfilterchecktemplate.cloneNode(true);
-  // var ramFilter=ramFiltertemplate.cloneNode(true);
   ramfiltercontainer.classList.remove("ram-container-temp");
   var ramfiltercheck = ramfiltercontainer.querySelector("input");
   var ramFilter = ramfiltercontainer.querySelector("label");
   ramfiltercheck.classList.remove("ram-filter-check-temp");
   ramFilter.classList.remove("ram-filter-temp");
-  // console.log(ramFilter);
   ramfiltercheck.innerText = filteredRam[i];
   ramfiltercheck.setAttribute("id", "ram-id-" + i);
   ramFilter.innerText = filteredRam[i];
   ramFilter.setAttribute("for", "ram-id-" + i);
   ramWrapper.appendChild(ramfiltercontainer);
-  // ramContainer.appendChild(ramFilter);
 }
 
-const filterMobiles = () => {
-  // var mobileBrands = Object.keys(brands);
-  // let allMobiles = [];
-  // for (let itr = 0; itr < mobileBrands.length; itr++) {
-  //   for (let i = 0; i < brands[mobileBrands[itr]].length; i++) {
-  //     brands[mobileBrands[itr]][i].mobileType = mobileBrands[itr];
-  //     // console.log(mobileBrands[itr]);
-  //   }
-  //   allMobiles = [...allMobiles, ...brands[mobileBrands[itr]]];
-  // }
-  // for (let i = 0; i < filterConditions.length; i++) {
-  //   if (filterConditions[i].applicable === true) {
-  //     if (filteredArray.length === 0) {
-  //       for (let mobile = 0; mobile < allMobiles.length; mobile++) {
-  //         var subjectedText =
-  //           allMobiles[mobile].mobileType.charAt(0).toUpperCase() +
-  //           allMobiles[mobile].mobileType.substr(1).toLowerCase();
-  //         if (filterConditions[i].selected.includes(subjectedText)) {
-  //           filteredArray.push(allMobiles[mobile]);
-  //         }
-  //       }
-  //     } else {
-  //       filteredArray = [];
-  //       for (let mobile = 0; mobile < allMobiles.length; mobile++) {
-  //         var subjectedText =
-  //           allMobiles[mobile].mobileType.charAt(0).toUpperCase() +
-  //           allMobiles[mobile].mobileType.substr(1).toLowerCase();
-  //         if (filterConditions[i].selected.includes(subjectedText)) {
-  //           filteredArray.push(allMobiles[mobile]);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-  // console.log(filteredArray);
-  // createMobileBrand("Samsung",filteredArray);
-  filterBrand();
-
-  // var selectedEle = e.target.nextElementSibling.innerText;
-  // filerteredBrandsObj[selectedEle] = brands[selectedEle];
-};
 var filteredBrandsObj = {};
 
 function filterBrand() {
@@ -254,21 +156,6 @@ function applyFilter(filteredBrands) {
   }
   removeBrand();
   renderApp(newBrandObj);
-  // renderApp(filterMobileProperties(selectedBrandEle, filteredBrands, "ram"));
-
-  // var selectedRam = [];
-  // Array.from(selectedBrandEle).forEach(function(ele, ind) {
-  //   if(ind != 0) {
-  //     if(ele.querySelector(".ram-filter-check").checked) {
-  //       selectedRam.push(ele.querySelector('.ram-filter').innerText);
-  //     }
-  //   }
-  // });
-  // var NewFilteredArray = [];
-  // for(var mobile in filteredBrands) {
-  //   NewFilteredArray[mobile] = filteredBrands[mobile].filter(filterMobilesUsingSpecs("ram", selectedRam));
-  // }
-  // renderApp(NewFilteredArray)
 }
 
 function filterMobilesUsingSpecs(type, checkedValues) {
@@ -281,7 +168,6 @@ function filterMobilesUsingSpecs(type, checkedValues) {
         var min = parseInt(splitvalues[0]);
         var max = parseInt(splitvalues[1]);
       }
-      // console.log(min, max, a[type]);
       if (a[type] > min && a[type] < max) {
         return 1;
       } else {
