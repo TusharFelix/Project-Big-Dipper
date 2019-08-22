@@ -2,6 +2,7 @@
 
 <head>
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="C:/Users/admin/Desktop/js/Project-Big-Dipper/features/sort/sort.css">
   <title>Big Dipper</title>
 </head>
 
@@ -12,6 +13,20 @@
     </div>
   </header>
   <main>
+  	<div class="container-wrapper">
+        <button class="menu-button">
+            SORT
+        </button>
+        <div class="dropdown-menu">
+        	<ul>
+	           	<li><a class="sort-pop" value="price" href="#">Price-Low to High</a></li>
+	            <li><a class="sort-pop" data-order="desc" value = "price" href="#">Price-High to Low</a></li>
+	            <li><a class="sort-pop" data-order="desc" value = "ratings" href="#">Rating-High to Low</a></li>
+	            <li><a class="sort-pop" value="ratings" href="#">Rating-Low to High</a></li>
+	            
+	        </ul>
+        </div>
+    </div>
     <div class="container">
       <div class="templates" style="display: none">
         <div class="brand-card brand-template">
@@ -21,18 +36,23 @@
           </div>
         </div>
         <div class="mobile-card mobile-card-template">
-          <h3 class="mobile-name">test name</h3>
+        	<h3 class="mobile-name">test name</h3>
           <div>
             <h6>RAM</h6>
             <div class="mobile-ram">test ram</div>
           </div>
           <div class="mobile-price">test price</div>
+          <div class="mobile-ratings">test ratings</div>
         </div>
       </div>
+
+
       <section class="brands-section"></section>
     </div>
   </main>
-  <script src="./js/script.js"></script>
+
+  <script src="./features/sort/sort.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
