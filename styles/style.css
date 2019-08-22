@@ -99,7 +99,21 @@ body{
     display: none;
     border-top: none;
     text-align: center;
-   
+  }
+  .filter-submit{
+      float: right;
+  }
+  .ram-filter-check-temp{
+    display:none;
+    
+  }
+  .brand-filter-check-temp{
+    display:none;
+
+  }
+  .ram-filter-temp
+  {
+      display:none;
   }
   .filter-section
   {

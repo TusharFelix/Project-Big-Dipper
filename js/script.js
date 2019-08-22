@@ -259,7 +259,7 @@ var brands = {
     {
       model: "Galaxy S9 Plus",
       price: 65000,
-       dateOfRelease:"23-02-2019",
+      dateOfRelease:"23-02-2019",
       ratings:4.2,
       ram: "8 GB RAM ",
       rom:"128 GB ROM",
