@@ -720,6 +720,7 @@ function createMobilecard(model) {
   mobile.querySelector(".mobile-ram").innerText = model["ram"];
   mobile.querySelector(".mobile-price").innerText = model["price"];
   mobile.querySelector(".mobile-ratings").innerText = model['ratings'];
+  mobile.querySelector(".mobile-date").innerText = model['dateOfRelease'];
   return mobile;
 }
 
