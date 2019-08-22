@@ -52,11 +52,15 @@ function popUpModal() {
   myModal.style.display = "block";
 
   span.onclick = function() {
-    modal.style.display = "none";
+    myModal.style.display = "none";
   }
 
-//   console.log(mobileNameArray[mobileNameArray.length-2],"this is the first value");
-//   console.log(mobileNameArray[mobileNameArray.length-1],"this is the second argument");
+    window.onclick = function(event) {
+        if (event.target == myModal) {
+          myModal.style.display = "none";
+        }
+    }
+
    compareMobileFeature(mobileNameArray[mobileNameArray.length-2],mobileNameArray[mobileNameArray.length-1]);
 }
 
@@ -104,6 +108,8 @@ tableTemplateNode.appendChild(tableRowNode);
 }
 }
 myDiv.appendChild(tableTemplateNode);
+mobileNameArray.pop();
+mobileNameArray.pop();
 }
 
 
