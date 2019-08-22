@@ -1,21 +1,31 @@
+    
+   
+//    var name= brandcard.querySelector("brand-title").innerText;
+//    console.log(name);
+    
     var mob_img = document.getElementById("mobile-img");
     var mobile_desc = document.getElementsByClassName("model-view-data")[0];
     var mobile_spec = document.getElementsByClassName("model-view-spec")[0];
     let cardElements = document.getElementsByClassName("mobile-card");
-    var arr_len = Array.from(cardElements).length;
+
+    var arr_len = cardElements.length;
+   
     for (let itr = 0; itr < arr_len; itr++) {
         let btnEle = cardElements[itr];
+        
         sourceElement = btnEle.querySelector(".view-btn");
         sourceElement.addEventListener("click", bindClick(btnEle));
     }
     function bindClick(btnEle) {
         return function() { 
             viewModel();
+            
             var mobile_name = btnEle.getElementsByClassName("mobile-name")[0].innerText;
             var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
-            for(var brand in brands){
-            mobileObj(brands[brand],mobile_name,mobile_ram);
-        }
+            var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
+            var brand=btnEle.parentElement.parentElement.getElementsByClassName("brand-title")[0].innerText;
+            mobileObj(brands[brand],mobile_name,mobile_ram,mobile_price);
+        
     };
   }
     function viewModel(){     //display model
@@ -31,10 +41,13 @@
         }
         }
     }
-    function mobileObj(brandObj,mobileName,mobile_ram){
+    function mobileObj(brandObj,mobileName,mobile_ram,mobile_price){
         brandObj.forEach(function(element){
             element.ram = element.ram.trim();   
-            if((element.model==mobileName)&&(element.ram==mobile_ram)){
+            console.log(element.model)
+            console.log(mobileName)
+            if((element.model==mobileName)&&(element.ram==mobile_ram)&&(element.price==mobile_price)){
+                // console.log(element);
                 modelData(element);
             }  
         });
