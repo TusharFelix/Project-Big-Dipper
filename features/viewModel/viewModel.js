@@ -17,7 +17,7 @@ function bindClick(btnEle) {
         var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
         var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
         var brand=btnEle.parentElement.parentElement.getElementsByClassName("brand-title")[0].innerText;
-        mobileObj(brands[brand],mobile_name,mobile_ram,mobile_price);
+        mobileObj(brands[brand],brand,mobile_name,mobile_ram,mobile_price);
     
 };
 }
@@ -37,15 +37,16 @@ function hideModal(){
     close_button.removeAttribute('autofocus');
     document.body.style.overflow = 'auto';
 }
-function mobileObj(brandObj,mobileName,mobile_ram,mobile_price){
+function mobileObj(brandObj,brand,mobileName,mobile_ram,mobile_price){
     brandObj.forEach(function(element){
         element.ram = element.ram.trim();   
         if((element.model==mobileName)&&(element.ram==mobile_ram)&&(element.price==mobile_price)){
-            modelData(element);
+            modelData(element,brand);
         }  
     });
 }
-function modelData(mobileObject){
+function modelData(mobileObject,brand){
+    document.getElementsByClassName("brand-head")[0].innerText = brand;
     mob_img.setAttribute("src", mobileObject.imageUrl);
     mobile_desc.querySelector("#mobile-model").innerText = mobileObject.model;
     mobile_desc.querySelector("#mobile-Ram").innerText = mobileObject.ram;

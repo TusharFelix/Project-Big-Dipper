@@ -46,25 +46,19 @@ body{
 .button {
     border: 2px solid black;
     border-radius: 5%;
-    background-color: white;
-    color: black;
+    background-color: #66459b; 
+    color: white;
     padding: 5px 15px;
     margin: 5px;
     font-size: 14px;
     cursor: pointer;
-    border-color: black;
+    border-color: #66459b; 
 }
 
 .view:hover{
-    border-color: grey;
-    background-color: grey;
-    color: black;
-}
-
-.compare:hover{
-    border-color: grey;
-    background-color: grey;
-    color: black;
+    border-color: #3a088a;
+    background-color: #3a088a;
+    color: white;
 }
 
 /* viewModal */
@@ -140,4 +134,9 @@ body{
       display: flex;
       justify-content: flex-end;
   }
-  
+  #mobile-model{
+      list-style-type: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #66459b; 
+  }
