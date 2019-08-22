@@ -1,25 +1,18 @@
-    
-   
-//    var name= brandcard.querySelector("brand-title").innerText;
-//    console.log(name);
-    
 var mob_img = document.getElementById("mobile-img");
 var mobile_desc = document.getElementsByClassName("model-view-data")[0];
 var mobile_spec = document.getElementsByClassName("model-view-spec")[0];
 let cardElements = document.getElementsByClassName("mobile-card");
-
+var modal = document.getElementById("myModal");
+var close_button = document.getElementById("close");
 var arr_len = cardElements.length;
-
 for (let itr = 0; itr < arr_len; itr++) {
     let btnEle = cardElements[itr];
-    
     sourceElement = btnEle.querySelector(".view-btn");
     sourceElement.addEventListener("click", bindClick(btnEle));
 }
 function bindClick(btnEle) {
     return function() { 
-        viewModel();
-        
+        viewModal();
         var mobile_name = btnEle.getElementsByClassName("mobile-name")[0].innerText;
         var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
         var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
@@ -28,26 +21,26 @@ function bindClick(btnEle) {
     
 };
 }
-function viewModel(){     //display model
-    var modal = document.getElementById("myModal");
-    var close_button = document.getElementById("close");
+function viewModal(){     //display model
     modal.style.display = "block";
-    close_button.onclick = function() {
-    modal.style.display = "none";
-    }
-    window.onclick = function(event) {
+    close_button.setAttribute('autofocus','true');
+    document.body.style.overflow = 'hidden';
+}
+close_button.onclick = hideModal;
+window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        hideModal();
     }
-    }
+}
+function hideModal(){
+    modal.style.display = "none";
+    close_button.removeAttribute('autofocus');
+    document.body.style.overflow = 'auto';
 }
 function mobileObj(brandObj,mobileName,mobile_ram,mobile_price){
     brandObj.forEach(function(element){
         element.ram = element.ram.trim();   
-        console.log(element.model)
-        console.log(mobileName)
         if((element.model==mobileName)&&(element.ram==mobile_ram)&&(element.price==mobile_price)){
-            // console.log(element);
             modelData(element);
         }  
     });
