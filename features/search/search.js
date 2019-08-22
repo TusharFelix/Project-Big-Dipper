@@ -27,14 +27,21 @@ const serachMobiles = function(searchText){
                 mobileSearchcard.appendChild(createMobilecard(element));
                 console.log(element);
                 });
-            }          
+            }
+            else{
+                document.querySelector(".brands-section").style.display="none";
+            }         
         });
     });
 }
 
 search.addEventListener('click',function(){serachMobiles(search.value)});
 submitButton.addEventListener('click',function(){serachMobiles(search.value)});
-
+search.addEventListener('keyup',function(event){
+    if(event.keyCode === 13){
+        serachMobiles(search.value);
+    }
+});
 
 
 
