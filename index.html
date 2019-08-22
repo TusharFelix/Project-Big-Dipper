@@ -33,49 +33,42 @@
           <div class="btn-div">
             <!-- <button class="button view">VIEW</button> -->
             <button class="button compare"
-              onclick=Compare(this.parentElement.parentElement.childNodes[1].innerText)>COMPARE</button>
+              onclick=Compare(this.parentElement.parentElement.parentElement,this.parentElement.parentElement.childNodes[1].innerText,this.parentElement.parentElement.childNodes[3].childNodes[3].innerText)>COMPARE</button>
           </div>
         </div>
       </div>
 
       <section class="brands-section"></section>
 
-
       <div class="compare-container container">
         <div class="compare-mobile-1">
           <img id="mobile-one" src="" alt="">
           <h3 id="mobile-name-one"></h3>
-          <button onclick=removeMobile(this.id); id="mobile-remove-btn-one"><i class="fa fa-close"></i></button>
+          <button onclick=removeMobile(this.id); id="mobileRemoveBtnOne"><i class="fa fa-close"></i></button>
 
         </div>
         <div class="compare-mobile-2">
           <img id="mobile-two" src="" alt="">
           <h3 id="mobile-name-two"></h3>
-          <button onclick=removeMobile(this.parentElement.childNodes[2].innerText); id="mobile-remove-btn-one"><i
+          <button onclick=removeMobile(this.parentElement.childNodes[2].innerText); id="mobileRemoveBtnTwo"><i
               class="fa fa-close"></i></button>
         </div>
         <!-- <div class="compare-now-button"> -->
-          <button id="compare-btn" onclick=popUpModal(); disabled>compareNow</button>
+        <button id="compare-btn" onclick=popUpModal(); disabled>compareNow</button>
         <!-- </div> -->
       </div>
 
       <div id="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <table class="table-template comparation-table">
-              <tr class="table-template-row">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <table class="table-template comparation-table">
+            <tr class="table-template-row">
               <td class="table-template-column"></td>
-              </tr>
-              </table>
-          
-            </div>
-      </div>
-      <!-- <table class="table-template comparation-table">
-        <tr class="table-template-row">
-        <td class="table-template-column"></td>
-        </tr>
-        </table> -->
+            </tr>
+          </table>
+        </div>
 
+      </div>
 
   </main>
   <script src="./js/script.js"></script>
