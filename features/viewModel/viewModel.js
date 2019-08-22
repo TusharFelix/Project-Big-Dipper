@@ -13,8 +13,11 @@
             viewModel();
             var mobile_name = btnEle.getElementsByClassName("mobile-name")[0].innerText;
             var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
+            var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
+            // console.log(mobile_name);
+            // console.log(mobile_ram);
             for(var brand in brands){
-            mobileObj(brands[brand],mobile_name,mobile_ram);
+            mobileObj(brands[brand],mobile_name,mobile_ram,mobile_price);
         }
     };
   }
@@ -31,10 +34,18 @@
         }
         }
     }
-    function mobileObj(brandObj,mobileName,mobile_ram){
+    function mobileObj(brandObj,mobileName,mobile_ram,mobile_price){
+        console.log(brandObj);
         brandObj.forEach(function(element){
-            element.ram = element.ram.trim();   
-            if((element.model==mobileName)&&(element.ram==mobile_ram)){
+            element.ram = element.ram.trim();  
+            console.log(element.ram,mobile_ram);
+            console.log("model");
+            console.log(element.model,mobileName); 
+            if((element.model==mobileName)&&(element.ram==mobile_ram)&&(element.price==mobile_price)){
+                console.log("true");
+                console.log(element.ram);
+                console.log("model");
+                console.log(element.model);
                 modelData(element);
             }  
         });
