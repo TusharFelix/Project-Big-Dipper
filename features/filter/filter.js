@@ -69,13 +69,12 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-clearbutton.onclick=function()
-{
+clearbutton.onclick = function () {
   var items = document.querySelectorAll(".filter-check");
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].type == 'checkbox')
-                items[i].checked = false;
-        }
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].type == 'checkbox')
+      items[i].checked = false;
+  }
 }
 function openTab(click, openTab) {
   var i, content, link;
@@ -92,7 +91,7 @@ function openTab(click, openTab) {
   document.getElementById(openTab).style.display = "block";
   // click.currentTarget.className += " active";
   document.getElementById("submitbutton").style.display = "block";
-  document.getElementById("clearbutton").style.display="block";
+  document.getElementById("clearbutton").style.display = "block";
   document.getElementById("displaytext").style.display = "none";
 
 }
@@ -287,10 +286,21 @@ function filterMobilesUsingSpecs(type, checkedValues) {
     if (type == "price") {
       for (var i = 0; i < checkedValues.length; i++) {
         var priceamount = checkedValues[i];
-        priceamount = priceamount.substr(1);
-        var splitvalues = priceamount.split("-");
-        var min = parseInt(splitvalues[0]);
-        var max = parseInt(splitvalues[1]);
+      
+        console.log(priceamount);
+        if (priceamount.startsWith("above"))
+        {
+        var splitvalues = priceamount.split(" ");
+        var min = 60000;
+        var max = 200000;
+        }
+        else
+        {
+          priceamount = priceamount.substr(1);
+          var splitvalues = priceamount.split("-");
+          var min = parseInt(splitvalues[0]);
+          var max = parseInt(splitvalues[1]);
+        }
       }
       // console.log(min, max, a[type]);
       if (a[type] > min && a[type] < max) {
