@@ -8,23 +8,34 @@ var arr_len = cardElements.length;
 for (let itr = 0; itr < arr_len; itr++) {
     let btnEle = cardElements[itr];
     sourceElement = btnEle.querySelector(".view-btn");
-    sourceElement.addEventListener("click", bindClick(btnEle));
+    sourceElement.addEventListener("click", function(){
+        viewMobileDetails(btnEle)
+    });
 }
-function bindClick(btnEle) {
-    return function() { 
-        viewModal();
+function viewMobileDetails(btnEle) {
+    // return function() { 
+        
         var mobile_name = btnEle.getElementsByClassName("mobile-name")[0].innerText;
         var mobile_ram = btnEle.getElementsByClassName("mobile-ram")[0].innerText;
         var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
         var brand=btnEle.parentElement.parentElement.getElementsByClassName("brand-title")[0].innerText;
         mobileObj(brands[brand],brand,mobile_name,mobile_ram,mobile_price);
+        viewModal();
     
-};
+// };
 }
 function viewModal(){     //display model
     modal.style.display = "block";
     close_button.setAttribute('autofocus','true');
     document.body.style.overflow = 'hidden';
+
+    document.addEventListener('keyup', function (event) {
+        if(event.code =="Escape" )
+        {
+            console.log("esc")
+            hideModal()
+        }
+     })
 }
 close_button.onclick = hideModal;
 window.onclick = function(event) {
@@ -32,11 +43,13 @@ window.onclick = function(event) {
         hideModal();
     }
 }
+
 function hideModal(){
     modal.style.display = "none";
     close_button.removeAttribute('autofocus');
     document.body.style.overflow = 'auto';
-}
+    sourceElement.setAttribute('autofocus','true');
+}  
 function mobileObj(brandObj,brand,mobileName,mobile_ram,mobile_price){
     brandObj.forEach(function(element){
         element.ram = element.ram.trim();   
