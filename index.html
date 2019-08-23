@@ -10,24 +10,27 @@
   <header class="header">
     <div class="container">
       <span class="header-title">Big Dipper</span>
+      <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Sort</button>
+          <button class="hidden-filter dropbtn" >filter</button>
+            <div id="myDropdown" class="dropdown-content">
+              <ul>
+                <li><input class="sort-pop" type="radio" name="sort-value" value="price" id="price-asc"> <label for="price-asc" >Price-Low to High</label></li>
+                <li><input class="sort-pop" data-order="desc" value = "price" type="radio" name="sort-value" id="price-desc"> <label for="price-desc" >Price-High to Low </label></li>
+                <li><input class="sort-pop" data-order="desc" value = "ratings" type="radio" name="sort-value" id="rating-desc"> <label for="rating-desc">Rating-High to Low</label></li>
+                <li><input class="sort-pop" value="ratings"  type="radio" name="sort-value" id="rating-asc"> <label for="rating-asc" >Rating-Low to High</label></li>
+                <li><input class="sort-pop" value="dateOfRelease"  type="radio" name="sort-value" id="date-asc"> <label for="date-assc" >Oldest</label></li>
+                <li><input class="sort-pop" data-order="desc" value="dateOfRelease" type="radio" name="sort-value" id="date-desc"> <label for="date-desc" >Newest</label></li>
+                <li><input class="sort-pop" type="radio" name="sort-value" value="clear" id="clear-value"> <label for="clear-value" >Clear</label></li>
+              </ul> 
+            </div>
+        </div>
+        
     </div>
   </header>
   <main>
-  	<div class="container-wrapper">
-        <button class="menu-button">
-            SORT
-        </button>
-        <div class="dropdown-menu">
-        	<ul>
-	           	<li><a class="sort-pop" value="price" href="#">Price-Low to High</a></li>
-	            <li><a class="sort-pop" data-order="desc" value = "price" href="#">Price-High to Low</a></li>
-	            <li><a class="sort-pop" data-order="desc" value = "ratings" href="#">Rating-High to Low</a></li>
-	            <li><a class="sort-pop" value="ratings" href="#">Rating-Low to High</a></li>
-	            <li><a class="sort-pop" value="dateOfRelease" href="#">Oldest</a></li>
-	            <li><a class="sort-pop" data-order="desc" value="dateOfRelease" href="#">Latest</a></li>
-	        </ul>
-        </div>
-    </div>
+  	
+    
     <div class="container">
       <div class="templates" style="display: none">
         <div class="brand-card brand-template">
@@ -53,8 +56,9 @@
     </div>
   </main>
 
-  <script src="./features/sort/sort.js"></script>
+  
     <script src="./js/script.js"></script>
+    <script src="./features/sort/sort.js"></script>
 </body>
 
 </html>
