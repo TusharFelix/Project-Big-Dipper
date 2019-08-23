@@ -1,0 +1,31 @@
+.header-title {
+    flex-basis: 20%;
+    margin-top: 10px;
+}
+.search-section {
+    display: flex;
+}
+.input-wrapper,.submit-wrapper{
+    height: 80%;
+    margin-left: 10px;
+    border: none;
+}
+input::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
+.input-section{
+    height: inherit;
+    width: 350px;
+    padding: 10px;
+}
+.submit-section{
+    height:inherit;
+    margin-top: 18px;
+}
+.search-text {
+    color: yellow;
+    margin: 0px;
+}
+.pointer {
+    cursor:pointer;
+}

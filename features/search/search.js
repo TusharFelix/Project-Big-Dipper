@@ -1,52 +1,57 @@
-const search=document.getElementById('search');
-var mobileSearchcard = document.querySelector(".mobile-search-card");
-var submitButton=document.getElementById('submit-button');
-console.log(brands);
+const search = document.getElementById('search');
+var submitButton = document.getElementById('submit-button');
 
-const serachMobiles = function(searchText){
-    var mobilenames=Object.keys(brands);
-    mobileSearchcard.innerHTML="";
-    let matches = mobilenames.filter(function(brand) {
-        searchText=searchText.replace(" ","");
-        const regex=new RegExp(`^${searchText}`,'gi');
-        brands[brand].forEach(function(element) {
-            var modelName=element.model.replace(" ","");
-            if(searchText.length==0){
-                document.querySelector(".brands-section").style.display="block"; 
-            }
-            else if((element.ram.match(regex))){
-                document.querySelector(".brands-section").style.display="none";
-                mobileSearchcard.appendChild(createMobilecard(element));
-            }
-            else if((modelName.match(regex))){
-                console.log(modelName);
-                console.log(regex);
-                document.querySelector(".brands-section").style.display="none";
-                mobileSearchcard.appendChild(createMobilecard(element));
-                //console.log(element);
-            }
-            else if((brand.match(regex))){
-                document.querySelector(".brands-section").style.display="none";
-                mobileSearchcard.innerHTML="";
-                brands[brand].forEach(function(element){
-                mobileSearchcard.appendChild(createMobilecard(element));
-                // console.log(element);
-                });
-            }
-            else{
-                document.querySelector(".brands-section").style.display="none";
-            }         
-        });
+function removeCards() {
+    var removeElement = document.querySelectorAll('.brand-card')
+    removeElement.forEach(function (item) {
+        item.remove();
     });
 }
-search.addEventListener('click',function(){serachMobiles(search.value)});
-submitButton.addEventListener('click',function(){serachMobiles(search.value)});
-search.addEventListener('keyup',function(event){
-    // console.log(event);
-    if(event.keyCode === 13){
-        serachMobiles(search.value);
+function model_and_ram_search(list,element,regex){
+    var modelName = element.model.replace(/ |[()]/g, "");
+    var mobileRam = element.ram.replace(/ |[()]/g, "");
+    if (mobileRam.match(regex)) {
+        list.push(element);
+    }
+    else if (modelName.match(regex)) {
+        list.push(element);
+    }
+    return list;
+}
+
+function match_text(brand,searchText,filteredObject){
+    var list = [];
+    searchText = searchText.replace(/ |[()]/g, "");
+    const regex = new RegExp(`${searchText}`, 'gi');
+    brands[brand].forEach(function (element) {
+        if (brand.match(regex)) {
+            filteredObject[brand] = brands[brand];
+        }
+        else {
+            list= model_and_ram_search(list,element,regex);  
+        }
+    });
+    if (list.length != 0) {
+        filteredObject[brand] = list;
+    }
+    return filteredObject;
+}
+
+function searchMobiles(searchText) {
+    removeCards();
+    var filteredObject = {};
+    var mobilenames = Object.keys(brands);
+    mobilenames.filter(function (brand) {
+        filteredObject=match_text(brand,searchText,filteredObject);
+    });
+    renderApp(filteredObject);
+}
+
+submitButton.addEventListener('click', function () { searchMobiles(search.value) });
+search.addEventListener('keyup', function (event) {
+    if (event.keyCode === 13) {
+        searchMobiles(search.value);
     }
 });
-
 
 

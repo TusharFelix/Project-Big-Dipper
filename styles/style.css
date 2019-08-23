@@ -10,30 +10,10 @@ body{
     background-color: #66459b;       
     padding: 1rem 0rem;
 }
-.header-alignment,.search-section{
+.header-alignment {
     display: flex;
 }
-.input-wrapper,.submit-wrapper{
-    height: 100%;
-    margin-left: 10px;
-    border: none;
-}
-input::placeholder {
-    font-family: 'Courier New', Courier, monospace;
-}
-.input-section{
-    height: inherit;
-    width: 350px;
-    padding: 10px;
-}
-.submit-section{
-    height:inherit;
-}
-.pointer {
-    cursor:pointer;
-}
 .header-title{
-    flex-basis: 25%;
     color: #ffffff; 
     font-size: 2rem;
     font-weight: 400;
@@ -47,13 +27,10 @@ input::placeholder {
 .brand-card:nth-child(even) .mobile-card{
     background-color: #f8f8f8;
 }
-.brand-models,.mobile-search-card {
+.brand-models {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -1rem 0rem 0;    
-}
-.mobile-search-card {
-    margin-top: 20px;
 }
 .mobile-card {
     width: calc(33.33% - 1rem);
