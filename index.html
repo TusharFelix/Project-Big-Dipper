@@ -43,12 +43,16 @@
               <div class="mobile-ram">test ram</div>
             </div>
             <div class="mobile-price">test price</div>
-            <div class="btn-div">
-              <button id="view-btn" class="button view view-btn">VIEW</button></div>
-          </div>
             <div class="button-section">
+                <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
+              </div>
+            <div class="btn-div">
+              <button id="view-btn" class="button view view-btn">VIEW</button>
+            </div>
+          </div>
+            <!-- <div class="button-section">
               <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
-            </div>  
+            </div>   -->
           </div>
         <section class="brands-section"></section>
       </div>
@@ -56,10 +60,10 @@
 
       <div id="myModal" class="modal-view-section modal">
           
-        <div class="model-view-template modal-content">
+        <div class="model-view-template view-modal-content">
             <div class="close-div">
                
-                <button type="button" id="close" class="close" autofocus >&times;</button>
+                <button type="button" id="view-close" class="view-close" autofocus >&times;</button>
               
                
             </div>

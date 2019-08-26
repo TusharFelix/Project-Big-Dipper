@@ -3,7 +3,7 @@ var mobile_desc = document.getElementsByClassName("model-view-data")[0];
 var mobile_spec = document.getElementsByClassName("model-view-spec")[0];
 let cardElements = document.getElementsByClassName("mobile-card");
 var modal = document.getElementById("myModal");
-var close_button = document.getElementById("close");
+var close_button = document.getElementById("view-close");
 var arr_len = cardElements.length;
 
 for (let itr = 0; itr < arr_len; itr++) {
