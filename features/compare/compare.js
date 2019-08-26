@@ -103,7 +103,6 @@ function popUpModal() {
     span.onclick = function () {
         var removeTableAfterComparation = myDiv.childNodes[5];
         removeTableAfterComparation.remove();
-        console.log(removeTableAfterComparation);
         myModal.style.display = "none";
 
     }
@@ -112,9 +111,6 @@ function popUpModal() {
 function compareMobileFeature() {
     var tableTemplateNode = tableTemplate.cloneNode(false);
     tableTemplateNode.classList.remove('table-template');
-    console.log(mobileBrandListArray, "mobile brand List", "compare mobile feature section");
-    console.log(brandLocaitonCount, "locaiton count ", "compare mobile feature section");
-    console.log(mobileListArray, "mobile list array", "compare mobile feature seciton");
     var mobileKeys = Object.keys(brands[mobileBrandListArray[0]][brandLocaitonCount[0]]);
     for (let iterator = 0; iterator < mobileKeys.length - 1; iterator++) {
         var tableRowNode = tableRow.cloneNode(false);
@@ -160,11 +156,8 @@ function removeFunction(removeArgument) {
     var arrayIndex = mobileListArray.indexOf(modelToRemove);
     if (arrayIndex > -1) {
         mobileListArray.splice(arrayIndex, 1);
-        console.log(mobileListArray, "mobile list array ", "value in remove section");
         mobileBrandListArray.splice(arrayIndex, 1);
         brandLocaitonCount.splice(arrayIndex, 1);
-        console.log(mobileBrandListArray, "mobile Brand List", "value in remove section");
-        console.log(brandLocaitonCount, "brand locaiton count", "value in remove section");
 
     }
 

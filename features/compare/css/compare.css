@@ -51,7 +51,8 @@
     position: fixed;
     bottom: 0px;
     height: 100px;
-    width: 100%;
+    left: 0;
+    right: 0;
     background-color: aliceblue;
  
 }
