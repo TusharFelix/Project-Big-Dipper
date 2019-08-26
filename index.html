@@ -3,23 +3,29 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./features/sort/sort.css" />
     <link rel="stylesheet" href="./features/compare/css/compare.css" />
+    <link rel="stylesheet" href="./features/search/search.css" />
     <link rel="stylesheet" href="./styles/filter.css" />
     <title>Big Dipper</title>
   </head>
+<body>
+  <header class="header">
+    <div class="container">
+      <span class="header-title">Big Dipper</span>
+    </div>
+  </header>
+  <main>
+    <!--recent launches start  -->
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <span class="header-title">Big Dipper</span>
+    <!--  end-->
+    <div class="container">
+      <!--search start  -->
+      <div class="search-section">
+        <div class="input-wrapper">
+          <p class="search-text"> Search for Brand or RAM or Model : </p>
+          <input type="text" placeholder="search for Brand or RAM or Model " class="input-section" id="search">
+          <input type="submit" value="search" class="submit-section pointer" id="submit-button">
+        </div>
       </div>
-    </header>
-    <main>
-      <!--recent launches start  -->
-
-      <!--  end-->
-      <div class="container">
-        <!--search start  -->
-
         <!--  end-->
 
         <!--filter start  -->
@@ -189,6 +195,7 @@
     <script src="./js/script.js"></script>
     <script src="./features/sort/sort.js"></script>
     <script src="./features/compare/compare.js"></script>
+    <script src="./features/search/search.js"></script>
     <script src="./features/filter/filter.js"></script>
   
   </body>
