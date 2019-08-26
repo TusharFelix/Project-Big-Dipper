@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./features/viewModel/CSS/model.css" />
     <link rel="stylesheet" href="./features/sort/sort.css" />
     <link rel="stylesheet" href="./features/compare/css/compare.css" />
     <link rel="stylesheet" href="./features/search/search.css" />
@@ -151,15 +152,56 @@
             <div class="mobile-ratings">test ratings</div>
             <div class="mobile-date">test date</div>
             <div class="button-section">
-              <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
-            </div>  
+                <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
+              </div>
+            <div class="btn-div">
+              <button id="view-btn" class="button view view-btn">VIEW</button>
+            </div>
           </div>
-          
-        </div>
+          </div>
         <section class="brands-section"></section>
       </div>
       <!--view details modal start  -->
 
+      <div id="view-myModal" class="modal-view-section view-modal">
+          
+        <div class="model-view-template view-modal-content">
+            <div class="close-div">
+               
+                <button type="button" id="view-close" class="view-close" autofocus >&times;</button>
+              
+               
+            </div>
+            <div class="model-view-top">
+                <div class="model-view-top-img">
+                  <h3 class="brand-head"></h3>
+                    <img id="mobile-img">
+                </div>
+                <div class="model-view-desc">
+                     <ul class="modal-view-list modal-view-list-desc model-view-data">
+                         <li id="mobile-model"></li>
+                         <li id="mobile-Ram"></li>
+                         <li id="mobile-Rom"></li>
+                         <li id="mobile-camera"></li>
+                         <li id="mobile-battery"></li>
+                         <li id="mobile-processor"></li>
+                         <li id="mobile-screensize"></li>
+                         <li id="mobile-simType"></li>
+                         <li id="mobile-otgcompatible"></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="model-view-bottom">
+                <ul class="modal-view-list-spec model-view-list model-view-spec">
+                    <li id="mobile-price" ></li>
+                    <li id="mobile-Rating"></li>
+                    <li id="mobile-ModelNo"></li>
+                    <li id="mobile-color"></li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
       <!--  end-->
 
       <!--compare start  -->
@@ -193,6 +235,7 @@
       <!--  end-->
     </main>
     <script src="./js/script.js"></script>
+    <script src="./features/viewModel/viewModel.js"></script>
     <script src="./features/sort/sort.js"></script>
     <script src="./features/compare/compare.js"></script>
     <script src="./features/search/search.js"></script>
