@@ -8,9 +8,6 @@
 {
     margin:5px;
 }
-.mobile-card-template {
-    display: none;
-}
 .filter-button
 {
     float:right;
@@ -30,7 +27,7 @@
   }
   
   /* Modal Content */
-  .modal-content {
+  .model-popup {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -38,16 +35,16 @@
     width: 80%;
   }
   
-  /* The Close Button */
-  .close {
+  /* The close-filter Button */
+  .close-filter {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .close-filter:hover,
+  .close-filter:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
