@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./features/sort/sort.css" />
     <link rel="stylesheet" href="./features/compare/css/compare.css" />
+    <link rel="stylesheet" href="./styles/filter.css" />
     <title>Big Dipper</title>
   </head>
 
@@ -22,7 +23,91 @@
         <!--  end-->
 
         <!--filter start  -->
+        <button id="myBtn" class="filter-button">Filter</button>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="model-popup">
+            <span class="close-filter">&times;</span>
+            <section class="filter-section">
+              <div class="filter-options">
+                  <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'brand')"
+                >
+                  Brand
+                </button>
+                <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'price')"
+                >
+                  Price
+                </button>
+                <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'ram')"
+                >
+                  RAM
+                </button>
+
+              </div>
+              <div class="Container2">
+                  <div id="brand" class="content">
+                      <div class="brand-container brand-container-temp ">
+                        <input
+                          type="checkbox"
+                          name="brand"
+                          class="filter-check brand-filter-check brand-filter-check-temp"
+                        />
+                        <label class="filter-label brand-filter brand-filter-temp"></label>
+                      </div>
+                    </div>
+
+                <div id="price" class="content">
+                    <div class="check-box-container" style="display: none"></div>
+                  <div class="check-box-container">
+                    <input id = "price-id-0" type="checkbox" class="filter-check mycheck" />
+                    <label  class="filter-label" for = "price-id-0">₹10000-20000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-1" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-1">₹20000-30000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-2" type="checkbox" class="filter-check mycheck" />
+                    <label  class="filter-label" for = "price-id-2">₹30000-40000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-3" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-3">₹40000-50000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-4" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-4">₹50000-60000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-5" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label" for = "price-id-5">above 60000</label>
+                  </div>
+                </div>
+
+                <div id="ram" class="content">
+                  <div class="ram-container ram-container-temp">
+                    <input type="checkbox" name="ram" class="filter-check ram-filter-check-temp" data-set=""/>
+                    <label for="" class="filter-label ram-filter-temp"></label>
+                  </div>
+                </div>
+
+
+                <button id = "submitbutton" class="filter-submit" style="display: none">Apply Filter</button>
+                <!-- <button id = "submitbutton" class="filter-submit">Clear Filter</button> -->
+                 <button id = "clearbutton" style="display:none">Clear Filter</button>
+                <span style="display: block; text-align: center" id = "displaytext">Select a type to filter</span>
+              </div>
+            </section>
+          </div>
+        </div>
         <!--  end-->
 
         <!--sort start  -->
@@ -104,5 +189,7 @@
     <script src="./js/script.js"></script>
     <script src="./features/sort/sort.js"></script>
     <script src="./features/compare/compare.js"></script>
+    <script src="./features/filter/filter.js"></script>
+  
   </body>
 </html>
