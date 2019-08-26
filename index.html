@@ -1,88 +1,101 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/model.css" />
+    <title>Big Dipper</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="./styles/style.css" />
-  <title>Big Dipper</title>
-</head>
-
-<body>
-  <header class="header">
-    <div class="container">
-      <span class="header-title">Big Dipper</span>
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      <div class="templates" style="display: none">
-        <div class="brand-card brand-template">
-          <h2 class="brand-title">Brand title</h2>
-          <div class="brand-models">
-            <!-- contains all the mobiles of a particular brand -->
-          </div>
-        </div>
-        <div class="mobile-card mobile-card-template">
-          <h3 class="mobile-name">test name</h3>
-          <div>
-            <h6>RAM</h6>
-            <div class="mobile-ram">test ram</div>
-          </div>
-          <div class="mobile-price">test price</div>
-          <div class="btn-div">
-              <button id="view-btn" class="button view view-btn" onclick="bindClick()" >VIEW</button>
-              <!-- <button class="button compare">COMPARE</button> -->
-          </div>
-        </div>
+  <body>
+    <header class="header">
+      <div class="container">
+        <span class="header-title">Big Dipper</span>
       </div>
+    </header>
+    <main>
+      <!--recent launches start  -->
 
+      <!--  end-->
+      <div class="container">
+        <!--search start  -->
+
+        <!--  end-->
+
+        <!--filter start  -->
+
+        <!--  end-->
+
+        <!--sort start  -->
+
+        <!--  end-->
+
+        <div class="templates" style="display: none">
+          <div class="brand-card brand-template">
+            <h2 class="brand-title">Brand title</h2>
+            <div class="brand-models">
+              <!-- contains all the mobiles of a particular brand -->
+            </div>
+          </div>
+          <div class="mobile-card mobile-card-template">
+            <h3 class="mobile-name">test name</h3>
+            <div>
+              <h6>RAM</h6>
+              <div class="mobile-ram">test ram</div>
+            </div>
+            <div class="mobile-price">test price</div>
+            <div class="btn-div">
+              <button id="view-btn" class="button view view-btn">VIEW</button></div>
+          </div>
+          </div>
+        <section class="brands-section"></section>
+      </div>
+      <!--view details modal start  -->
 
       <div id="myModal" class="modal-view-section modal">
           
-          <div class="model-view-template modal-content">
-              <div class="close-div">
-                 
-                  <button type="button" id="close" class="close" autofocus >&times;</button>
-                
-                 
-              </div>
-              <div class="model-view-top">
-                  <div class="model-view-top-img">
-                    <h3 class="brand-head"></h3>
-                      <img id="mobile-img">
-                  </div>
-                  <div class="model-view-desc">
-                       <ul class="modal-view-list modal-view-list-desc model-view-data">
-                           <li id="mobile-model"></li>
-                           <li id="mobile-Ram"></li>
-                           <li id="mobile-Rom"></li>
-                           <li id="mobile-camera"></li>
-                           <li id="mobile-battery"></li>
-                           <li id="mobile-processor"></li>
-                           <li id="mobile-screensize"></li>
-                           <li id="mobile-simType"></li>
-                           <li id="mobile-otgcompatible"></li>
-                       </ul>
-                  </div>
-              </div>
-              <div class="model-view-bottom">
-                  <ul class="modal-view-list-spec model-view-list model-view-spec">
-                      <li id="mobile-price" ></li>
-                      <li id="mobile-Rating"></li>
-                      <li id="mobile-ModelNo"></li>
-                      <li id="mobile-color"></li>
-                  </ul>
-              </div>
-          </div>
-  
+        <div class="model-view-template modal-content">
+            <div class="close-div">
+               
+                <button type="button" id="close" class="close" autofocus >&times;</button>
+              
+               
+            </div>
+            <div class="model-view-top">
+                <div class="model-view-top-img">
+                  <h3 class="brand-head"></h3>
+                    <img id="mobile-img">
+                </div>
+                <div class="model-view-desc">
+                     <ul class="modal-view-list modal-view-list-desc model-view-data">
+                         <li id="mobile-model"></li>
+                         <li id="mobile-Ram"></li>
+                         <li id="mobile-Rom"></li>
+                         <li id="mobile-camera"></li>
+                         <li id="mobile-battery"></li>
+                         <li id="mobile-processor"></li>
+                         <li id="mobile-screensize"></li>
+                         <li id="mobile-simType"></li>
+                         <li id="mobile-otgcompatible"></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="model-view-bottom">
+                <ul class="modal-view-list-spec model-view-list model-view-spec">
+                    <li id="mobile-price" ></li>
+                    <li id="mobile-Rating"></li>
+                    <li id="mobile-ModelNo"></li>
+                    <li id="mobile-color"></li>
+                </ul>
+            </div>
         </div>
 
-      <section class="brands-section"></section>
-    </div>
+      </div>
+      <!--  end-->
 
+      <!--compare start  -->
 
-
-  </main>
-  <script src="./js/script.js"></script>
-  <script src="./features/viewModel/viewModel.js"></script>
-</body>
-
+      <!--  end-->
+    </main>
+    <script src="./js/script.js"></script>
+    <script src="./features/viewModel/viewModel.js"></script>
+  </body>
 </html>

@@ -1,0 +1,106 @@
+/* view button */
+
+.btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.button {
+    border: 2px solid black;
+    border-radius: 5%;
+    background-color: #66459b; 
+    color: white;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: #66459b; 
+}
+
+.view:hover{
+    border-color: #3a088a;
+    background-color: #3a088a;
+    color: white;
+}
+
+/* view button end */
+
+/* viewModal style start */
+
+.model-view-top
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+.model-view-top-img
+{
+    flex-basis: 40%;
+    text-align: center;
+}
+.model-view-desc
+{
+    flex-basis: 60%;
+    
+}
+.model-view-bottom
+{
+    padding: 10px;
+}
+.modal-view-list
+{
+    margin: 0px;
+    font-size: 20px;
+    
+}
+
+.modal-view-list-desc li{
+    margin-top: 20px;
+}
+.modal-view-list-spec li{
+    margin-top: 10px;
+    list-style-type: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close-div
+  {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+  }
+  #mobile-model{
+      list-style-type: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #66459b; 
+  }
+
+/* viewModel style end */
