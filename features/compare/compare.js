@@ -1,6 +1,6 @@
 var compareObjectContent = {};
 var count = { value: 0 };
-var maximumMobileToCompare = { value: 5 };
+var maximumMobileToCompare = { value: 2 };
 var mobileListArray = [];
 var mobileBrandListArray = [];
 var brandLocaitonCount = [];
