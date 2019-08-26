@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="styles/filter.css" />
+    <title>Big Dipper</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <span class="header-title">Big Dipper</span>
+      </div>
+    </header>
+    <main>
+      <!--recent launches start  -->
+
+      <!--  end-->
+      <div class="container">
+        <!--search start  -->
+
+        <!--  end-->
+
+        <!--filter start  -->
+        <button id="myBtn" class="filter-button">Filter</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <section class="filter-section">
+              <div class="filter-options">
+                  <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'brand')"
+                >
+                  Brand
+                </button>
+                <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'price')"
+                >
+                  Price
+                </button>
+                <button
+                  class="filter-option-button link"
+                  onclick="openTab(event, 'ram')"
+                >
+                  RAM
+                </button>
+
+              </div>
+              <div class="Container2">
+                  <div id="brand" class="content">
+                      <div class="brand-container brand-container-temp ">
+                        <input
+                          type="checkbox"
+                          name="brand"
+                          class="filter-check brand-filter-check brand-filter-check-temp"
+                          onclick="generateconditions(event)"
+                        />
+                        <label class="filter-label brand-filter brand-filter-temp"></label>
+                      </div>
+                    </div>
+
+                <div id="price" class="content">
+                    <div class="check-box-container" style="display: none"></div>
+                  <div class="check-box-container">
+                    <input id = "price-id-0" type="checkbox" class="filter-check mycheck" />
+                    <label  class="filter-label" for = "price-id-0">₹10000-20000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-1" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-1">₹20000-30000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-2" type="checkbox" class="filter-check mycheck" />
+                    <label  class="filter-label" for = "price-id-2">₹30000-40000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-3" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-3">₹40000-50000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-4" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label"  for = "price-id-4">₹50000-60000</label>
+                  </div>
+                  <div class="check-box-container">
+                    <input id = "price-id-5" type="checkbox" class="filter-check mycheck" />
+                    <label class="filter-label" for = "price-id-5">above 60000</label>
+                  </div>
+                </div>
+
+                <div id="ram" class="content">
+                  <div class="ram-container ram-container-temp">
+                    <input type="checkbox" name="ram" class="filter-check ram-filter-check-temp" data-set="" onclick="generateconditions(event)"/>
+                    <label for="" class="filter-label ram-filter-temp"></label>
+                  </div>
+                </div>
+
+
+                <button id = "submitbutton" class="filter-submit" style="display: none">Apply Filter</button>
+                <!-- <button id = "submitbutton" class="filter-submit">Clear Filter</button> -->
+                 <button id = "clearbutton" style="display:none">Clear Filter</button>
+                <span style="display: block; text-align: center" id = "displaytext">Select a type to filter</span>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!--  end-->
+
+        <!--sort start  -->
+
+        <!--  end-->
+
+        <div class="templates" style="display: none">
+          <div class="brand-card brand-template">
+            <h2 class="brand-title">Brand title</h2>
+            <div class="brand-models">
+              <!-- contains all the mobiles of a particular brand -->
+            </div>
+          </div>
+          <div class="mobile-card mobile-card-template">
+            <h3 class="mobile-name">test name</h3>
+            <div>
+              <h6>RAM</h6>
+              <div class="mobile-ram">test ram</div>
+            </div>
+            <div class="mobile-price">test price</div>
+          </div>
+        </div>
+        <section class="brands-section"></section>
+      </div>
+      <!--view details modal start  -->
+
+      <!--  end-->
+
+      <!--compare start  -->
+
+      <!--  end-->
+    </main>
+    <script src="./js/script.js"></script>
+    <script src="features/filter/filter.js"></script>
+  </body>
+</html>
