@@ -1,7 +1,4 @@
 var inputElements = document.querySelectorAll("input.mycheck");
-for (let i = 0; i < Array.from(inputElements).length; i++) {
-  inputElements[i].addEventListener("click", e => generateconditions(e));
-}
 document.querySelector(".filter-submit").addEventListener("click", e => {
   return filterBrand();
 });
@@ -193,8 +190,6 @@ function filterMobilesUsingSpecs(type, checkedValues) {
     if (type == "price") {
       for (var i = 0; i < checkedValues.length; i++) {
         var priceamount = checkedValues[i];
-      
-        console.log(priceamount);
         if (priceamount.startsWith("above"))
         {
         var splitvalues = priceamount.split(" ");
