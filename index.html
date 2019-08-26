@@ -1,7 +1,8 @@
 <html>
   <head>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/model.css" />
+    <link rel="stylesheet" href="./features/viewModel/CSS/model.css" />
+    <link rel="stylesheet" href="./features/compare/css/compare.css" />
     <title>Big Dipper</title>
   </head>
 
@@ -45,6 +46,9 @@
             <div class="btn-div">
               <button id="view-btn" class="button view view-btn">VIEW</button></div>
           </div>
+            <div class="button-section">
+              <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
+            </div>  
           </div>
         <section class="brands-section"></section>
       </div>
@@ -92,10 +96,37 @@
       <!--  end-->
 
       <!--compare start  -->
+      <!-- compare container -->
+      <div class="compare-container container">
+        <div class="show-selected-mobiles">
+          <div data-model='' class="compare-template compare-content">
+            <img class="compare-img" src="" alt="img">
+            <div class="compare-details">
+              <h1 class="compare-details-brand-model">brand Model</h1>
+            </div>
+            <button data-mobile-model='' onclick=removeFunction(this); class="button close-button">&times; </button>
+          </div>
+        </div>
+        <button class="compare-button button" onclick=popUpModal();>compare Now</button>
+      </div>
+      <table class="table-template table-content">
+        <tr class="table-row-template">
+          <td class="table-column-template"></td>
+        </tr>
+      </table>
+      <div id="modal">
+        <div class="modal-content">
 
+          <span class="close">&times;</span>
+          <div class="compare-result result-template"></div>
+        </div>
+
+      </div>
+      <!-- end -->
       <!--  end-->
     </main>
     <script src="./js/script.js"></script>
     <script src="./features/viewModel/viewModel.js"></script>
+    <script src="./features/compare/compare.js"></script>
   </body>
 </html>
