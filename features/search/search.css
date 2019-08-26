@@ -1,0 +1,28 @@
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-wrapper,.submit-wrapper{
+    height: 80%;
+    margin-left: 10px;
+    border: none;
+}
+input::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
+.input-section{
+    height: inherit;
+    width: 350px;
+    padding: 10px;
+}
+.submit-section{
+    margin-left: 10px;
+    height: 37px;
+}
+.search-text {
+    margin: 0px;
+}
+.pointer {
+    cursor:pointer;
+}
