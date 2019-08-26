@@ -1,16 +1,31 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./features/sort/sort.css" />
+    <title>Big Dipper</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./features/sort/sort.css" />
-  <title>Big Dipper</title>
-</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <span class="header-title">Big Dipper</span>
+      </div>
+    </header>
+    <main>
+      <!--recent launches start  -->
 
-<body>
-  <header class="header">
-    <div class="container">
-      <span class="header-title">Big Dipper</span>
-      <div class="dropdown">
+      <!--  end-->
+      <div class="container">
+        <!--search start  -->
+
+        <!--  end-->
+
+        <!--filter start  -->
+
+        <!--  end-->
+
+        <!--sort start  -->
+        <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Sort</button>
           <button class="hidden-filter dropbtn" >filter</button>
             <div id="myDropdown" class="dropdown-content">
@@ -25,40 +40,38 @@
               </ul> 
             </div>
         </div>
-        
-    </div>
-  </header>
-  <main>
-  	
-    
-    <div class="container">
-      <div class="templates" style="display: none">
-        <div class="brand-card brand-template">
-          <h2 class="brand-title">Brand title</h2>
-          <div class="brand-models">
-            <!-- contains all the mobiles of a particular brand -->
+        <!--  end-->
+
+        <div class="templates" style="display: none">
+          <div class="brand-card brand-template">
+            <h2 class="brand-title">Brand title</h2>
+            <div class="brand-models">
+              <!-- contains all the mobiles of a particular brand -->
+            </div>
           </div>
-        </div>
-        <div class="mobile-card mobile-card-template">
-        	<h3 class="mobile-name">test name</h3>
-          <div>
-            <h6>RAM</h6>
-            <div class="mobile-ram">test ram</div>
-          </div>
-          <div class="mobile-price">test price</div>
-          <div class="mobile-ratings">test ratings</div>
+          <div class="mobile-card mobile-card-template">
+            <h3 class="mobile-name">test name</h3>
+            <div>
+              <h6>RAM</h6>
+              <div class="mobile-ram">test ram</div>
+            </div>
+            <div class="mobile-price">test price</div>
+            <div class="mobile-ratings">test ratings</div>
           <div class="mobile-date">test date</div>
+          </div>
+          
         </div>
+        <section class="brands-section"></section>
       </div>
+      <!--view details modal start  -->
 
+      <!--  end-->
 
-      <section class="brands-section"></section>
-    </div>
-  </main>
+      <!--compare start  -->
 
-  
+      <!--  end-->
+    </main>
     <script src="./js/script.js"></script>
     <script src="./features/sort/sort.js"></script>
-</body>
-
+  </body>
 </html>
