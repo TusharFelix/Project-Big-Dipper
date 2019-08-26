@@ -28,8 +28,8 @@ body{
   .dropdown {
     position: relative;
     display: inline-block;
-    float: right;
-  }
+    margin: 1rem 0;
+    }
   
   .dropdown-content {
     display: none;
