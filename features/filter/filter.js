@@ -63,12 +63,18 @@ span.onclick = function () {
 submitbutton.onclick = function () {
   modal.style.display = "none";
 };
+
+clearbutton.onclick=function()
+{
+  document.style.display="none";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
+
 clearbutton.onclick = function () {
   var items = document.querySelectorAll(".filter-check");
   for (var i = 0; i < items.length; i++) {
