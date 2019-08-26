@@ -49,9 +49,9 @@ function searchMobiles(searchText) {
         filteredObject = match_text(brand, searchText, filteredObject);
     });
     renderApp(filteredObject);
-    // if (Object.keys(filteredObject).length == 0) {
-    //     alert("No results found...");
-    // }
+    if (Object.keys(filteredObject).length == 0) {
+        alert("No results found...");
+    }
 }
 submitButton.addEventListener('click', function () { searchMobiles(search.value) });
 search.addEventListener('keyup', function (event) {
