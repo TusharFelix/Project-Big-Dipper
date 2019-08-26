@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./features/sort/sort.css" />
     <link rel="stylesheet" href="./features/compare/css/compare.css" />
     <link rel="stylesheet" href="./styles/filter.css" />
     <title>Big Dipper</title>
@@ -110,7 +111,21 @@
         <!--  end-->
 
         <!--sort start  -->
-
+        <div class="dropdown">
+          <button onclick="sortFunction()" class="dropbtn">Sort</button>
+          <button class="hidden-filter dropbtn" >filter</button>
+            <div id="myDropdown" class="dropdown-content">
+              <ul>
+                <li><input class="sort-pop" type="radio" name="sort-value" value="price" id="price-asc"> <label for="price-asc" >Price-Low to High</label></li>
+                <li><input class="sort-pop" data-order="desc" value = "price" type="radio" name="sort-value" id="price-desc"> <label for="price-desc" >Price-High to Low </label></li>
+                <li><input class="sort-pop" data-order="desc" value = "ratings" type="radio" name="sort-value" id="rating-desc"> <label for="rating-desc">Rating-High to Low</label></li>
+                <li><input class="sort-pop" value="ratings"  type="radio" name="sort-value" id="rating-asc"> <label for="rating-asc" >Rating-Low to High</label></li>
+                <li><input class="sort-pop" value="dateOfRelease"  type="radio" name="sort-value" id="date-asc"> <label for="date-assc" >Oldest</label></li>
+                <li><input class="sort-pop" data-order="desc" value="dateOfRelease" type="radio" name="sort-value" id="date-desc"> <label for="date-desc" >Newest</label></li>
+                <li><input class="sort-pop" type="radio" name="sort-value" value="clear" id="clear-value"> <label for="clear-value" >Clear</label></li>
+              </ul> 
+            </div>
+        </div>
         <!--  end-->
 
         <div class="templates" style="display: none">
@@ -127,10 +142,13 @@
               <div class="mobile-ram">test ram</div>
             </div>
             <div class="mobile-price">test price</div>
+            <div class="mobile-ratings">test ratings</div>
+            <div class="mobile-date">test date</div>
             <div class="button-section">
               <button onclick=compareMobiles(this.parentElement.parentElement); class="button compare">Compare</button>
             </div>  
           </div>
+          
         </div>
         <section class="brands-section"></section>
       </div>
@@ -169,6 +187,7 @@
       <!--  end-->
     </main>
     <script src="./js/script.js"></script>
+    <script src="./features/sort/sort.js"></script>
     <script src="./features/compare/compare.js"></script>
     <script src="./features/filter/filter.js"></script>
   
