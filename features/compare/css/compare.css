@@ -1,0 +1,118 @@
+/* compare section styles */
+
+.button-section{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button{
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 5px;
+
+    background-color: #66459b;
+    padding: 5px;
+    outline: none;
+    color: #ffffff;
+}
+
+.compare:hover{
+    background-color: grey;
+    color: #000000;    
+}
+
+.compare-button:hover{
+    background: grey;
+    color: black;
+}
+.compare-button{
+    text-align: center;
+    display: none;
+    width: 10%;
+}
+
+.compare-content{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.compare-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-template{
+    display: none;
+}
+
+.compare-container{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+    left: 0;
+    right: 0;
+    background-color: aliceblue;
+ 
+}
+.compare-img{
+    width: 50px;
+}
+
+.close-button{
+    height: 20px;
+    background: grey;
+}
+
+.close-button:hover{
+    background-color: #ffffff;
+}
+
+.show-selected-mobiles{
+    display: flex;
+    width: 90%;
+}
+
+
+#modal {
+    display: none;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.table-column-template{
+    padding: 10px;
+}
+
+.table-template{
+    display: none;
+}
+
+/* end */
