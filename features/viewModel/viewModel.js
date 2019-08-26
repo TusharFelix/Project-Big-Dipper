@@ -5,11 +5,13 @@ let cardElements = document.getElementsByClassName("mobile-card");
 var modal = document.getElementById("myModal");
 var close_button = document.getElementById("close");
 var arr_len = cardElements.length;
+
 for (let itr = 0; itr < arr_len; itr++) {
     let btnEle = cardElements[itr];
     sourceElement = btnEle.querySelector(".view-btn");
     sourceElement.addEventListener("click", bindClick(btnEle));
 }
+
 function bindClick(btnEle) {
     return function() { 
         viewModal();
@@ -18,25 +20,29 @@ function bindClick(btnEle) {
         var mobile_price = btnEle.getElementsByClassName("mobile-price")[0].innerText;
         var brand=btnEle.parentElement.parentElement.getElementsByClassName("brand-title")[0].innerText;
         mobileObj(brands[brand],brand,mobile_name,mobile_ram,mobile_price);
-    
-};
+    };
 }
+
 function viewModal(){     //display model
     modal.style.display = "block";
     close_button.setAttribute('autofocus','true');
     document.body.style.overflow = 'hidden';
 }
+
 close_button.onclick = hideModal;
+
 window.onclick = function(event) {
     if (event.target == modal) {
         hideModal();
     }
 }
+
 function hideModal(){
     modal.style.display = "none";
     close_button.removeAttribute('autofocus');
     document.body.style.overflow = 'auto';
 }
+
 function mobileObj(brandObj,brand,mobileName,mobile_ram,mobile_price){
     brandObj.forEach(function(element){
         element.ram = element.ram.trim();   
@@ -45,6 +51,7 @@ function mobileObj(brandObj,brand,mobileName,mobile_ram,mobile_price){
         }  
     });
 }
+
 function modelData(mobileObject,brand){
     document.getElementsByClassName("brand-head")[0].innerText = brand;
     mob_img.setAttribute("src", mobileObject.imageUrl);
