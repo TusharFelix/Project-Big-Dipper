@@ -63,7 +63,7 @@
     font-size: 25px;
     font-weight: bold;
 }
-.modal {
+.view-modal {
     display: none; 
     position: fixed; 
     z-index: 1;

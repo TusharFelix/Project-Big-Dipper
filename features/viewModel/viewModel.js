@@ -2,7 +2,7 @@ var mob_img = document.getElementById("mobile-img");
 var mobile_desc = document.getElementsByClassName("model-view-data")[0];
 var mobile_spec = document.getElementsByClassName("model-view-spec")[0];
 let cardElements = document.getElementsByClassName("mobile-card");
-var modal = document.getElementById("myModal");
+var view_modal = document.getElementById("view-myModal");
 var close_button = document.getElementById("view-close");
 var arr_len = cardElements.length;
 
@@ -27,7 +27,7 @@ function viewMobileDetails(btnEle) {
 
 function viewModal() {
   //display model
-  modal.style.display = "block";
+  view_modal.style.display = "block";
   close_button.setAttribute("autofocus", "true");
   document.body.style.overflow = "hidden";
 
@@ -42,13 +42,13 @@ function viewModal() {
 close_button.onclick = hideModal;
 
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == view_modal) {
     hideModal();
   }
 };
 
 function hideModal() {
-  modal.style.display = "none";
+    view_modal.style.display = "none";
   close_button.removeAttribute("autofocus");
   document.body.style.overflow = "auto";
 }
