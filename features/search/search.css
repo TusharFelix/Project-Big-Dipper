@@ -1,9 +1,7 @@
-.header-title {
-    flex-basis: 20%;
-    margin-top: 10px;
-}
 .search-section {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .input-wrapper,.submit-wrapper{
     height: 80%;
@@ -19,11 +17,10 @@ input::placeholder {
     padding: 10px;
 }
 .submit-section{
-    height:inherit;
-    margin-top: 18px;
+    margin-left: 10px;
+    height: 37px;
 }
 .search-text {
-    color: yellow;
     margin: 0px;
 }
 .pointer {

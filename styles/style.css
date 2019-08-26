@@ -10,9 +10,7 @@ body{
     background-color: #66459b;       
     padding: 1rem 0rem;
 }
-.header-alignment {
-    display: flex;
-}
+
 .header-title{
     color: #ffffff; 
     font-size: 2rem;
