@@ -95,12 +95,12 @@ function raiseAlert(message) {
 //new logic for table insertion;
 var myModal = document.getElementById("modal");
 var btn = document.getElementById("compare-btn");
-var span = document.getElementsByClassName("close")[0];
+var popUpButton = document.querySelector(".close");
 
 function popUpModal() {
 
     myModal.style.display = "block";
-    span.onclick = function () {
+    popUpButton.onclick = function () {
         var removeTableAfterComparation = myDiv.childNodes[5];
         removeTableAfterComparation.remove();
         myModal.style.display = "none";
