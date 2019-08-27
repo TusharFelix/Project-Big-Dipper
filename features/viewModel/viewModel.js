@@ -39,12 +39,18 @@ function viewModal() {
 }
 
 close_button.onclick = hideModal;
-document.onclick = function(event) {
-  if (event.target == view_modal) {
-    
+
+window.addEventListener("click",function(event){
+  if(event.target == view_modal){
     hideModal();
   }
-};
+});
+// document.onclick = function(event) {
+//   if (event.target == view_modal) {
+    
+//     hideModal();
+//   }
+// };
 
 function hideModal() {
     view_modal.style.display = "none";
