@@ -4,9 +4,9 @@
     display: flex;
     justify-content: flex-end;
 }
-.button {
+.view-button {
     border: 2px solid black;
-    border-radius: 5%;
+    border-radius: 5px;
     background-color: #66459b; 
     color: white;
     padding: 5px 15px;
@@ -16,7 +16,7 @@
     border-color: #66459b; 
 }
 
-.view:hover{
+.view-button:hover{
     border-color: #3a088a;
     background-color: #3a088a;
     color: white;

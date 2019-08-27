@@ -33,16 +33,15 @@ function viewModal() {
 
   document.addEventListener("keyup", function(event) {
     if (event.code == "Escape") {
-      console.log("esc");
       hideModal();
     }
   });
 }
 
 close_button.onclick = hideModal;
-
-window.onclick = function(event) {
+document.onclick = function(event) {
   if (event.target == view_modal) {
+    
     hideModal();
   }
 };
