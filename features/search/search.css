@@ -12,7 +12,6 @@ input::placeholder {
     font-family: 'Courier New', Courier, monospace;
 }
 .input-section{
-    height: inherit;
     width: 350px;
     padding: 10px;
 }
